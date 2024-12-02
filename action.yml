@@ -9,6 +9,10 @@ inputs:
     default: true
   flags:
     description: "Flags (https://github.com/nccgroup/sobelow#options)"
+  digest:
+    description: 'Docker image "elixir" digest to be retrieved'
+    required: false
+    default: 'b2c15d27457a960a0f5ee98d4d08ddc9080d98017bd720d02732ae44cfd1f6ae'
 
 runs:
   using: 'docker'
@@ -16,3 +20,4 @@ runs:
   args:
     - ${{ inputs.flags }}
     - ${{ inputs.report }}
+    - ${{ inputs.digest }}
